@@ -23,8 +23,6 @@ public class CriaConta {
 	
 	System.out.println("A soma dos saldos da Primeira Conta e Segunda Conta é: " + (primeiraConta.saldo + segundaConta.saldo));
 	
-	
-	
 	}
 
 }
