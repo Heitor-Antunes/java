@@ -21,6 +21,16 @@ public class TestaMetodo {
 		System.out.println("O saldo da conta de " + contaHeitor.titular + " é: " + contaHeitor.saldo);
 		System.out.println(sacou);
 		
+		Conta contaJuliana = new Conta();
+		contaJuliana.titular = "Juliana";
+		contaJuliana.deposita(1000);
+		
+		System.out.println("O saldo da conta de " + contaJuliana.titular + " é: " + contaJuliana.saldo);
+		
+		contaJuliana.transfere(200, contaHeitor);
+		System.out.println("O saldo da conta de " + contaJuliana.titular + " é: " + contaJuliana.saldo);
+		System.out.println("O saldo da conta de " + contaHeitor.titular + " é: " + contaHeitor.saldo);
+		
 		
 	}
 
