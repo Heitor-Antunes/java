@@ -4,15 +4,11 @@ public class TestaGetESet {
 	
 	public static void main(String[] args) {
 		
-		Conta conta = new Conta();
+		Conta conta = new Conta(1990, 123456);
 		
 		conta.deposita(100);
 		System.out.println(conta.getSaldo());
-		
-		conta.setNumero(123456);
 		System.out.println("O Número da conta é: " +conta.getNumero());
-		
-		conta.setAgencia(1990);
 		System.out.println("A Agência da conta é: " + conta.getAgencia());
 
 		
