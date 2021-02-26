@@ -10,14 +10,16 @@ public class TestaConta {
 		
 		ContaPoupanca cp = new ContaPoupanca(2020, 54321);
 		cp.deposita(200);
-		
+		System.out.println("Saldo CP: " + cp.getSaldo());
+
+		cp.saca(10);
 		System.out.println("Saldo CP: " + cp.getSaldo());
 		
-		cc.transfere(10, cp);
-		System.out.println("Saldo CC: " + cc.getSaldo());
-		System.out.println("Saldo CP: " + cp.getSaldo());
-		
-		
+//		cc.transfere(10, cp);
+//		System.out.println("Saldo CC: " + cc.getSaldo());
+//		System.out.println("Saldo CP: " + cp.getSaldo());
+//		
+
 	}
 
 }

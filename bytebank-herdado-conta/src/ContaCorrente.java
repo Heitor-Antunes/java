@@ -23,9 +23,13 @@ public class ContaCorrente extends Conta {
 
 	@Override
 	public boolean saca(double valor) {
-		double taxaSaque = valor + 0.20;
-		return super.saca(taxaSaque);
+			
+		if(this.saldo >= valor) {
+			this.saldo -= valor;
+			return true;
+		} else {
+			System.out.println("Saldo insuficiente! Operação não realizada.");
+			return false;
+		}
 	}
-		
-	
 }

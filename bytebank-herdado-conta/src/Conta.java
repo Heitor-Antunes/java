@@ -1,8 +1,8 @@
 
 
-public class Conta {
+public abstract class Conta {
 	
-	private double saldo;
+	protected double saldo;
 	private int agencia;
 	private int numero;
 	private Cliente titular;
@@ -28,16 +28,7 @@ public class Conta {
 		this.saldo += valor;
 	}
 	
-	public boolean saca(double valor) {
-		
-		if(this.saldo >= valor) {
-			this.saldo -= valor;	
-			return true;
-		} else {
-			System.out.println("Saldo insuficiente! Operação não realizada.");
-			return false;
-		}
-	}
+	public abstract boolean saca(double valor);
 	
 	public boolean transfere(double valor, Conta destino) {
 		
