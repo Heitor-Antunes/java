@@ -16,21 +16,16 @@ public class ContaCorrente extends Conta implements Tributavel {
 //	}
 	
 	@Override
-	public boolean transfere(double valor, Conta destino) {
+	public void transfere(double valor, Conta destino) throws SaldoInsuficienteException {
 		saca(10);
-		return super.transfere(valor, destino);
+		super.transfere(valor, destino);
 	}
 
 	@Override
-	public boolean saca(double valor) {
-			
-		if(this.saldo >= valor) {
-			this.saldo -= valor;
-			return true;
-		} else {
-			System.out.println("Saldo insuficiente! Operação não realizada.");
-			return false;
-		}
+	public void saca(double valor) throws SaldoInsuficienteException {
+		double valorComTaxa = valor + 10;
+		super.saca(valorComTaxa);
+
 	}
 
 	@Override

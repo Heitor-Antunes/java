@@ -26,15 +26,19 @@ public abstract class Conta {
 		this.saldo += valor;
 	}
 	
-	public abstract boolean saca(double valor);
+	public void saca(double valor) throws SaldoInsuficienteException {
+		if(this.saldo < valor) {
+			throw new SaldoInsuficienteException("Saldo insuficiente! Operação não realizada. " + 
+		"Saldo: " + this.saldo + ", " + "Valor: " + valor);
+		}
+		this.saldo -= valor;
+	}
 	
-	public boolean transfere(double valor, Conta destino) {
+	public void transfere(double valor, Conta destino) throws SaldoInsuficienteException {
+			this.saca(valor);
+			destino.deposita(valor);
+	}
 		
-				if(saca(valor)) {
-				destino.deposita(valor);
-				return true;
-				} return false;
-			}
 	
 	public double getSaldo() {
 		return this.saldo;
