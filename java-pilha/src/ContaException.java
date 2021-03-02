@@ -1,7 +1,7 @@
 
 public class ContaException {
 	
-	void deposita() {
+	void deposita() throws MinhaException {
 		
 	}
 }
