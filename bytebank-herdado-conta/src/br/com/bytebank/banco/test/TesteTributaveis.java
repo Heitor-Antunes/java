@@ -5,7 +5,7 @@ import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
 import br.com.bytebank.banco.modelo.SeguroDeVida;
 
-public class TestaTributaveis {
+public class TesteTributaveis {
 	
 	public static void main(String[] args) {
 		
