@@ -83,6 +83,18 @@ public abstract class Conta {
 	}
 	
 	@Override
+	public boolean equals(Object ref) {
+		
+		Conta conta = (Conta) ref;
+		
+		if(this.numero == conta.numero) {
+			if(this.agencia == conta.agencia) {
+				return true;
+			}
+		} return false;
+	}
+	
+	@Override
 	public String toString() {
 		return "Agência: " + this.agencia + " e " + "Número: " + this.numero;
 	}
