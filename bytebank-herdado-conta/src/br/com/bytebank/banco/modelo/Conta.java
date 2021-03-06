@@ -35,7 +35,6 @@ public abstract class Conta {
 			System.out.println("O Número não pode ser menor ou igual a 0");
 			return;
 		} this.numero = numero;
-		System.out.println("Conta criada com sucesso!");
 		Conta.totalContas++;
 	}
 	
