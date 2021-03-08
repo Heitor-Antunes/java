@@ -1,6 +1,7 @@
 package br.com.bytebank.banco.test.util;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import br.com.bytebank.banco.modelo.Conta;
 import br.com.bytebank.banco.modelo.ContaCorrente;
@@ -12,12 +13,16 @@ public class TesteHeitor {
 		
 		ContaCorrente cc = new ContaCorrente(123, 321);
 		
-		ArrayList<Conta> lista = new ArrayList<Conta>();
+		List<Conta> lista = new ArrayList<Conta>();
+		
+		lista.add(cc);
 		
 		for(int i = 0; i < 15000; i++) {
 			lista.add(cc);
 			System.out.println(lista.size());
 		}
+		
+		
 	}
 
 }
