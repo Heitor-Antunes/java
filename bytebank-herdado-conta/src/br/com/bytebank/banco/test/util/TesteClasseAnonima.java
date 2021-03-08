@@ -1,6 +1,7 @@
 package br.com.bytebank.banco.test.util;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import br.com.bytebank.banco.modelo.Conta;
 import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
 
-public class Teste {
+public class TesteClasseAnonima {
 
     public static void main(String[] args) {
 
@@ -42,50 +43,24 @@ public class Teste {
             lista.add(cc2);
             lista.add(cc3);
             lista.add(cc4);
+                      
+            //Lambda ->
+            lista.sort( (c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero()));
+            
+            //Lambda ->
+            Comparator<Conta> comp = (Conta c1, Conta c2)  -> {
+            		if(c1.getSaldo() < c2.getSaldo()) {
+            			return -1;			
+            		} if(c1.getSaldo() > c2.getSaldo()) {
+            			return 1;
+            		} return 0;
+			};
             
             for (Conta conta : lista) {
 				System.out.println(conta);
 			}
-            
-//            SaldoDaContaComparator comparator = new SaldoDaContaComparator();
-            TitularDaContaComparator titularComparator = new TitularDaContaComparator();
-            lista.sort(titularComparator);
-            System.out.println();
-            
-            System.out.print("Lista de Contas ordena por Titular: " + '\n' + '\n');
-
-            //Retorna a mesma coisa que forEach
-            for(int i = 0; i < lista.size(); i++) {
-            	System.out.println(lista.get(i) + ", Titular: " + lista.get(i).getTitular().getNome());
-            }
-            
+                       
+            lista.forEach((conta) -> System.out.println(conta));
     }
 
-}
-
-class TitularDaContaComparator implements Comparator<Conta> {
-
-	@Override
-	public int compare(Conta c1, Conta c2) {
-		
-		String nomeC1 = c1.getTitular().getNome();
-		String nomeC2 = c2.getTitular().getNome();
-		
-		//Retorna um int
-		return nomeC1.compareTo(nomeC2);
-	}
-	
-}
-
-class SaldoDaContaComparator implements Comparator<Conta> {
-
-	@Override
-	public int compare(Conta c1, Conta c2) {
-		if(c1.getSaldo() < c2.getSaldo()) {
-			return -1;			
-		} if(c1.getSaldo() > c2.getSaldo()) {
-			return 1;
-		} return 0;
-	}
-	
 }
