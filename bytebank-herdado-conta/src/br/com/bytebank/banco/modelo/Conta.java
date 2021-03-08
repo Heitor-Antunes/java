@@ -96,7 +96,7 @@ public abstract class Conta {
 	
 	@Override
 	public String toString() {
-		return "Agência: " + this.agencia + " e " + "Número: " + this.numero;
+		return "Agência: " + this.agencia + ", Número: " + this.numero + ", Saldo: " + this.getSaldo();
 	}
 
 }
