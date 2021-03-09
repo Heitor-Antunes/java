@@ -21,6 +21,7 @@ public class TesteOutrosWrappers {
 		lista.add(20.5);
 		lista.add(15.5f);
 		
+		
 	}
 
 }
