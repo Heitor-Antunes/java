@@ -1,12 +1,22 @@
-package br.com.bytebank.banco.modelo;
+package br.com.alura.io.teste;
 
 import java.io.Serializable;
 
-public class Cliente implements Serializable {
+public class Cliente implements Serializable{
 	
+	private static final long serialVersionUID = -468092198300702405L;
+
 	private String nome;
 	private String cpf;
 	private String profissao;
+	
+	public String getNomeCpf() {
+		return this.nome + this.cpf;
+	}
+	
+	public String getNomeCpfProfissao() {
+		return this.nome + this.cpf + this.profissao;
+	}
 	
 	public String getNome() {
 		return this.nome;

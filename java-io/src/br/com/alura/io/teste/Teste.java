@@ -8,27 +8,29 @@ public class Teste {
 	
 	public static void main(String[] args) throws Exception {
 	
-	     Scanner scanner = new Scanner(new File("contas.csv"));
+	     Scanner scanner = new Scanner(new File("contas.csv"), "UTF-8"); //encoding padrão windows
          while(scanner.hasNextLine()) {
                  String linha = scanner.nextLine();
-                 System.out.println(linha);
+//                 System.out.println(linha);
 
                  Scanner linhaScanner = new Scanner(linha);
                  linhaScanner.useLocale(Locale.US);
                  linhaScanner.useDelimiter(",");
 
-                 String valor1 = linhaScanner.next();
-                 int valor2 = linhaScanner.nextInt();
-                 int valor3 = linhaScanner.nextInt();
-                 String valor4 = linhaScanner.next();
-                 double valor5 = linhaScanner.nextDouble();
+                 String tipoConta = linhaScanner.next();
+                 int agencia = linhaScanner.nextInt();
+                 int numero = linhaScanner.nextInt();
+                 String titular = linhaScanner.next();
+                 double saldo = linhaScanner.nextDouble();
 
-                 System.out.println(valor1 + " " + valor2 + " " + valor3 + " " + valor4 + " " + valor5);
+//                 System.out.println(valor1 + " " + valor2 + " " + valor3 + " " + valor4 + " " + valor5);
+                 System.out.format(new Locale("pt", "BR"), "%s - %04d-%08d, %s: %08.2f\n", tipoConta, agencia, numero, titular, saldo);
+                 
 
                  linhaScanner.close();
 
 //                 String[] valores = linha.split(",");
-//                 System.out.println(valores[1]);
+//                 System.out.println(Arrays.toString(valores[1]));
          }
          scanner.close();	
 		

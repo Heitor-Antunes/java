@@ -10,7 +10,7 @@ import br.com.bytebank.banco.modelo.Conta;
 import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
 
-public class TesteLambdas {
+public class TesteLambda {
 
     public static void main(String[] args) {
 
@@ -44,30 +44,23 @@ public class TesteLambdas {
             lista.add(cc3);
             lista.add(cc4);
                       
-            lista.sort(new Comparator<Conta>() { // Classe Anônima
-
-            	@Override
-            	public int compare(Conta c1, Conta c2) {
-            		return Integer.compare(c1.getNumero(), c2.getNumero());
-            		}
-            	}
-            );
+            //Lambda ->
+            lista.sort( (c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero()));
             
-            Comparator<Conta> comp = new Comparator<Conta>() {
-            	
-            	@Override
-            	public int compare(Conta c1, Conta c2) {
+            //Lambda ->
+            Comparator<Conta> comp = (Conta c1, Conta c2)  -> {
             		if(c1.getSaldo() < c2.getSaldo()) {
             			return -1;			
             		} if(c1.getSaldo() > c2.getSaldo()) {
             			return 1;
             		} return 0;
-            	}
 			};
             
             for (Conta conta : lista) {
 				System.out.println(conta);
 			}
+                       
+            lista.forEach((conta) -> System.out.println(conta));
     }
 
 }
